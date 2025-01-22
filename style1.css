@@ -1,0 +1,110 @@
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+header {
+    background-color: #aa86f1;
+    padding: 20px;
+    text-align: center;
+    color: white;
+}
+
+h1 {
+    font-size: 2rem;
+}
+
+main {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: white;
+    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    margin-bottom: 15px;
+    font-size: 1.5rem;
+}
+
+.file-section, .assign-work-section {
+    margin-bottom: 30px;
+}
+
+/* File Table Styling */
+.file-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.file-table th, .file-table td {
+    padding: 10px 15px;
+    border: 1px solid #ddd;
+}
+
+.file-table th {
+    background-color: #f0f0f0;
+    text-align: left;
+}
+
+.file-table td {
+    text-align: center;
+}
+
+.file-table tr:hover {
+    background-color: #f9f9f9;
+}
+
+.btn {
+    padding: 8px 12px;
+    background-color: #aa86f1;
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: #aa86f1;
+}
+
+/* Assign Work Form Styling */
+.assign-work-section form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+label {
+    font-weight: bold;
+}
+
+input[type="text"], input[type="date"], textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+textarea {
+    resize: none;
+}
+
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #aa86f1;
+    color: white;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}

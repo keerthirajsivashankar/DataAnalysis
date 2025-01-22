@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="/assets/favicon.ico">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Datalysis</title>
+</head>
+<body>
+    <header>
+        <nav class="topnav">
+            <div class="brand">
+                <img class="logo" src="/assets/android-chrome-512x512.png" alt="logo">
+                <h2 class="name">DataLabs</h2>
+            </div>
+            <div class="features">
+                <div class="home"><i class="fa-solid fa-house" style="color: aliceblue;"></i><p>Home</p></div>
+                <div class="feedback"><i class="fa-solid fa-comment" style="color: aliceblue;"></i><p>Feedback</p></div>
+                <div class="aboutus"><i class="fa-solid fa-address-card" style="color: aliceblue;"></i><p>About </p></div>
+            </div>
+            <div class="search-container"></div>
+                <input type="text" id="search-input" placeholder="Search...">
+                <button onclick="search()" class="but1">Search</button>
+            </div>
+            <div class="logins">
+                <button class="login"><i class="fa-solid fa-user" style="color: aliceblue;"></i></button>
+            </div>
+        </nav>
+    </header>
+    <div class="welcome">
+        <div>
+            <p class="welcometext">WELCOME TO DATA LABS</p>
+            <p class="description">WE ANALYSE YOUR DATA FOR YOU</p>
+        </div>
+    </div>
+    <section>
+        <aside>
+           <ul id="results-list">
+            <li>Services</li>
+            <li>Pricing</li>
+            <li>Resources</li>
+            <li>Contact</li>
+            <li>FAQs </li>
+            <li>My Orders</li>
+            <li>History</li>
+            <li>Status</li>
+            <li>Methods</li>
+            <li>Hire DA</li>
+           </ul> 
+        </aside>
+        <div class="main">
+            <div class="form-wrapper">
+                <h2>Upload Your Data</h2>
+                <form action="/upload" method="POST" enctype="multipart/form-data">
+                    <div class="form-control">
+                        <label for="fileType">File Type</label>
+                        <select id="fileType" name="fileType" required>
+                            <option value="csv">CSV</option>
+                            <option value="excel">Excel (.xls, .xlsx)</option>
+                        </select>
+                    </div>
+            
+                    <div class="form-control">
+                        <label for="fileUpload">Upload File</label>
+                        <input  type="file" id="fileUpload" name="fileUpload" accept=".csv, .xls, .xlsx" required>
+                    </div>
+            
+                    <div class="form-control">
+                        <label for="uploadDate">Upload Date</label>
+                        <input type="date" id="uploadDate" name="uploadDate" required>
+                    </div>
+            
+                    <div class="form-control">
+                        <label for="deadlineDate">Deadline Date</label>
+                        <input type="date" id="deadlineDate" name="deadlineDate" required>
+                    </div>
+                    <div class="form-footer">
+                        <input type="submit" value="Submit">
+                    </div>
+                </form>
+            </div>
+            <div class="side-content">
+                <h3>How to Upload Your Data</h3>
+                <p>Follow these simple steps to ensure your file is uploaded correctly:</p>
+                <ol>
+                    <li>Select the file type you are uploading (CSV or Excel).</li>
+                    <li>Make sure the file follows the required format.</li>
+                    <li>Specify the upload date and deadline for processing.</li>
+                    <li>Clearly describe your data processing requirements in the provided field.</li>
+                </ol>
+            
+                <h3>Supported File Formats</h3>
+                <ul>
+                    <li><strong>CSV</strong>: Comma-Separated Values (.csv)</li>
+                    <li><strong>Excel</strong>: Microsoft Excel formats (.xls, .xlsx)</li>
+                </ul>
+            
+                <h3>Why Provide a Deadline?</h3>
+                <p>By setting a deadline, we ensure your data is processed in a timely manner, meeting your business or project needs efficiently.</p>
+            </div>            
+        </div>
+    </section>
+    <div class="whyus">
+        <div class="whyus0">
+            <h2 style="color: aliceblue;">Why Us ?</h2>
+            <hr>
+        </div>
+        <div class="whyus1">
+            <div class="card-container">
+                <div class="card">
+                  <div class="card-front">
+                    <!-- Card 1 front -->
+                  </div>
+                  <div class="card-back">
+                    <p>Ensure data integrity and protection with advanced encryption, multi-factor authentication, and real-time threat monitoring.</p>
+                  </div>
+                </div>
+                <div class="card">
+                  <div class="card-front">
+                    <!-- Card 2 front -->
+                  </div>
+                  <div class="card-back">
+                    <p>Leverage machine learning, predictive analytics, and AI-driven insights for smarter data-driven decision-making.</p>
+                  </div>
+                </div>
+              
+                <div class="card">
+                  <div class="card-front">
+                    <!-- Card 3 front -->
+                  </div>
+                  <div class="card-back">
+                    <p>Simplify complex data with interactive dashboards, charts, and visualizations for clearer insights and better decision-making.</p>
+                  </div>
+                </div>
+              </div>              
+        </div>
+    </div>
+    <footer class="footer">
+        <div class="footer-content">
+          <div class="footer-section">
+            <h3>Contact Us</h3>
+            <p>Email: contact@example.com</p>
+            <p>Phone: +1 (123) 456-7890</p>
+          </div>
+          <div class="footer-section">
+            <h3>Follow Us</h3>
+            <ul class="social-media">
+              <li><a href="#linkedin">LinkedIn</a></li>
+              <li><a href="#twitter">Twitter</a></li>
+              <li><a href="#facebook">Facebook</a></li>
+            </ul>
+          </div>
+          <div class="footer-section">
+            <h3>Quick Links</h3>
+            <ul style="list-style-type: none;">
+              <li><a href="#about">About Us</a></li>
+              <li><a href="#services">Services</a></li>
+              <li><a href="#portfolio">Portfolio</a></li>
+              <li><a href="#faq">FAQ</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>&copy; 2024 Your Company Name. All rights reserved.</p>
+        </div>
+    </footer> 
+    <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</body>
+</html>

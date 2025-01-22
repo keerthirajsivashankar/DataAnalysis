@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Admin Portal</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="/assets/favicon.ico">
+    <link rel="stylesheet" href="style1.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <header>
+        <h1>Data Lab - Admin Panel</h1>
+    </header>
+
+    <main>
+        <!-- Section to display uploaded files -->
+        <section class="file-section">
+            <h2>Uploaded Files</h2>
+            <table class="file-table">
+                <thead>
+                    <tr>
+                        <th>File Name</th>
+                        <th>Upload Date</th>
+                        <th>File Type</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="file-list">
+                    <tr>
+                        <td>example-file.csv</td>
+                        <td>2024-10-16</td>
+                        <td>.csv</td>
+                        <td>
+                            <a href="#" class="btn download-btn">Download</a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <!-- Section to assign tasks to employees -->
+        <section class="assign-work-section">
+            <h2>Assign Work to Employees</h2>
+            <form id="assign-work-form">
+                <label for="employee-name">Employee Name:</label>
+                <input type="text" id="employee-name" name="employee-name" placeholder="Enter employee name" required>
+
+                <label for="task-desc">Task Description:</label>
+                <textarea id="task-desc" name="task-desc" rows="4" placeholder="Enter task details" required></textarea>
+
+                <label for="deadline">Deadline:</label>
+                <input type="date" id="deadline" name="deadline" required>
+
+                <button type="submit" class="btn">Assign Task</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>Data Lab © 2024</p>
+    </footer>
+
+    <script>
+        async function fetchUploadedFiles() {
+            try {
+                const response = await fetch('http://localhost:3000/uploads');
+                const files = await response.json();
+
+                const fileList = document.getElementById('fileList');
+                fileList.innerHTML = ''; // Clear existing list
+
+                files.forEach(file => {
+                    const listItem = document.createElement('li');
+                    listItem.textContent = `${file.originalname} - Uploaded on: ${file.uploadDate}`;
+                    fileList.appendChild(listItem);
+                });
+            } catch (error) {
+                console.error('Error fetching files:', error);
+            }
+        }
+
+        fetchUploadedFiles();
+    </script>
+</body>
+</html>
